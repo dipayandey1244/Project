@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Personal HYROX and 88kg to 75kg fitness tracker.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>HYROX 75 — Personal Training OS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div><span class="eyebrow">PERSONAL TRAINING OS</span><h1>HYROX 75</h1><p>88 kg → 75 kg · Build the engine · Keep the muscle · Complete HYROX</p></div>
+      <button id="resetBtn" class="ghost">Reset demo data</button>
+    </header>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="card today">
+      <div class="section-head"><div><span class="eyebrow">TODAY</span><h2 id="todayTitle"></h2><p id="todayDesc"></p></div><span id="todayTag" class="tag"></span></div>
+      <div class="progress"><span id="sessionProgress"></span></div><div id="sessionProgressText" class="muted small"></div>
+      <div id="exerciseList" class="exercise-list"></div>
+      <button id="addExercise" class="secondary full">＋ Add exercise / activity</button>
+    </section>
+
+    <section class="two-col">
+      <section class="card">
+        <div class="section-head"><div><h2>Log today</h2><p>Record what actually happened.</p></div></div>
+        <div class="form-grid">
+          <label>Weight (kg)<input id="weight" type="number" min="40" max="200" step="0.1"></label>
+          <label>HYROX rounds<input id="rounds" type="number" min="0" max="8" step="1"></label>
+        </div>
+        <label>Notes<textarea id="notes" rows="4" placeholder="Energy, sleep, soreness, pace, wins..."></textarea></label>
+        <div class="actions"><button id="saveBtn" class="primary">Save achievement</button><button id="emailBtn" class="secondary">Open email</button></div>
+        <p id="saveStatus" class="success" aria-live="polite"></p>
+      </section>
+      <section class="card">
+        <h2>88 → 75 kg</h2><div class="weight-track"><span id="weightTrack"></span></div><div class="range"><span>88</span><strong id="remaining"></strong><span>75</span></div>
+        <div class="milestones"><div>🎯 <b>87 kg</b><span>first milestone</span></div><div>🏃 <b>4 rounds</b><span>two-week checkpoint</span></div><div>🏁 <b>8 rounds</b><span>full HYROX completion</span></div></div>
+      </section>
+    </section>
+
+    <section class="card"><div class="section-head"><div><h2>8-week roadmap</h2><p>Progression is deliberately conservative around Friday legs.</p></div></div><div id="roadmap" class="roadmap"></div></section>
+
+    <section class="two-col">
+      <section class="card"><h2>Achievement history</h2><div id="history" class="history"></div></section>
+      <section class="card"><h2>Achievement email</h2><p class="muted">Generated from your actual logged session.</p><textarea id="emailBody" rows="12" readonly></textarea></section>
+    </section>
+
+    <footer>Personal tracker · local data stays in your browser · email uses your device's mail app</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
